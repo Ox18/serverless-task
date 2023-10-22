@@ -1,11 +1,18 @@
-
 const hello = async (event, context) => {
-    return {
-        "statusCode": 200,
-        "body": JSON.stringify({ 'message': 'Hola mundo - bienvenidos al curso de serverless framework en aws'})
-    }
-}
+  const today = new Date();
+
+  const hour = today.getHours(),
+    minutes = today.getMinutes(),
+    seconds = today.getSeconds();
+
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      message: `Hello, the current time is ${hour}:${minutes}:${seconds}`,
+    }),
+  };
+};
 
 module.exports = {
-    hello
-}
+  hello,
+};
